@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+    <head>
+        <title>01_현재날짜.html</title>
+        <meta charset="utf-8">
+        <style>
+            #clock{
+                width: 500px;
+                height: 40px;
+                color: blue;
+                font-weight: bold;
+                font-size: 30px;
+                position: relative;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h3>Date객체</h3>
+        현재날짜 <div id="clock"></div>
+
+        <script>
+            //문제) 날짜변수 d값을 이용해서 날짜 정보를 아래와 같이 구성해서 id=clock에 출력하시오
+            //      출력 결과)2023.08.08(화) PM 2:09:13
+            //      글자갯수 2글자 : 월,일,분,초
+            //      오전 AM, 오후 PM(정오 12시 부터)
+            
+            const d=new Date(); //시스템의 현재 날짜 정보 가져오기(년월일시분초)
+
+            let today="";// 결과값
+            let days=["일","월","화","수","목","금","토"]
+            //년
+            today += d.getFullYear()+".";
+
+            //월
+            if( d.getMonth()+1<10){
+                today +="0"
+            }
+            today += d.getMonth()+1+".";
+
+            //일
+            if(d.getDate()<10){
+                today +="0"
+            }
+            today += d.getDate();
+
+            //요일
+            today +=" ("+ days[d.getDay()]+")";
+            //요일 다른 방식(switch 이용)
+            // switch(d.getDay()){
+            //     case 0 : today+=" (일) "; break;
+            //     case 1 : today+=" (월) "; break;
+            //     case 2 : today+=" (화) "; break;
+            //     case 3 : today+=" (수) "; break;
+            //     case 4 : today+=" (목) "; break;
+            //     case 5 : today+=" (금) "; break;
+            //     case 6 : today+=" (토) "; break;
+            // }
+
+            //오전,오후
+            if(d.getHours()<12){
+                today += " AM "
+            }else{
+                today +=" PM "
+            }
+
+            //시
+            if(d.getHours()<13){
+                today += d.getHours()+":";
+            }else{
+                today +=d.getHours()-12+":";
+            }
+
+            //분
+            if(d.getMinutes()<10){
+                today +="0"
+            }
+            today +=d.getMinutes()+":";
+
+            //초
+            if(d.getSeconds()<10){
+                today +="0"
+            }
+            today +=d.getSeconds();
+
+
+            document.getElementById("clock").innerHTML=today;
+            
+        </script>
+
+    </body>
+</html>

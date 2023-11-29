@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>03_지폐갯수.html</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <div id="demo"></div>
+    <div id="demo2"></div>
+
+    
+
+    <script>
+
+        //연습) 각 지폐갯수를 구하서 표작성해서 본문 id=demo에 출력하시오
+
+        let money = 64310;
+        money1 = parseInt(money / 10000);     
+        money = money % 10000;      //money%=10000
+        
+        let money2 = parseInt(money / 1000);
+        money = money % 1000;
+
+        let money3 = parseInt(money / 100);
+        money = money % 100;
+     
+        let money4 = parseInt(money / 10);
+        money = money % 10;
+
+        
+        let = result = "<table border='1' width='400' height='300'>";
+        result = result + "<tr>";
+        result = result + "<th>만원</th>";
+        result = result + "<td align='center'>" + money1 + "장" + "</td>";
+        result = result + "</tr>";
+
+        result = result + "<tr>";
+        result = result + "<th>천원</th>";
+        result = result + "<td align='center'>" + money2 + "장" + "</td>";
+        result = result + "</tr>";
+
+        result = result + "<tr>";
+        result = result + "<th>백원</th>";
+        result = result + "<td align='center'>" + money3 + "개" + "</td>";
+        result = result + "</tr>";
+
+        result = result + "<tr>";
+        result = result + "<th>십원</th>";
+        result = result + "<td align='center'>" + money4 + "개" + "</td>";
+        result = result + "</tr>";
+        result = result + "</table>";
+
+        document.getElementById("demo").innerHTML = result;
+
+
+        //2) 연습) 같은 문제 다른방식 풀이
+        let Newmoney = 84560;
+        a = parseInt(Newmoney / 10000);
+        aa = Newmoney% 10000;
+        document.write("<br>")
+        document.write("만원 : " + a + "장");
+        document.write("<br>");
+        document.write("남은금액 : " + aa + "원");
+        document.write("<hr>");
+
+        b =parseInt( aa / 1000);
+        bb = aa % 1000;
+        document.write("천원 : " + b + "장");
+        document.write("<br>");
+        document.write("남은금액 : " + bb + "원");
+        document.write("<hr>");
+
+        c = parseInt(bb / 100);
+        cc = bb % 100;
+        document.write("백원 : " + c + "개");
+        document.write("<br>");
+        document.write("남은금액 : " + cc + "원");
+        document.write("<hr>");
+
+        d = parseInt(cc / 10);
+        dd = cc % 10;
+        document.write("십원 : " + d + "개");
+        document.write("<br>");
+        document.write("남은금액 : " + dd + "원");
+        document.write("<hr>");
+        document.write("원금 : " + Newmoney + "원");
+
+
+        let = Newresult = "<table border='1' width='400' height='300'>";
+        Newresult = Newresult + "<tr>";
+        Newresult = Newresult + "<th>만원</th>";
+        Newresult = Newresult + "<td align='center'>" + a+ "장" + "</td>";
+        Newresult = Newresult + "</tr>";
+
+        Newresult = Newresult + "<tr>";
+        Newresult = Newresult + "<th>천원</th>";
+        Newresult = Newresult + "<td align='center'>" + b + "장" + "</td>";
+        Newresult = Newresult + "</tr>";
+
+        Newresult = Newresult + "<tr>";
+        Newresult = Newresult + "<th>백원</th>";
+        Newresult = Newresult + "<td align='center'>" + c + "개" + "</td>";
+        Newresult = Newresult + "</tr>";
+
+        Newresult = Newresult + "<tr>";
+        Newresult = Newresult + "<th>십원</th>";
+        Newresult = Newresult + "<td align='center'>" + d + "개" + "</td>";
+        Newresult = Newresult + "</tr>";
+        Newresult = Newresult + "</table>";
+
+        document.getElementById("demo2").innerHTML = Newresult;
+
+    </script>
+
+</body>
+
+</html>

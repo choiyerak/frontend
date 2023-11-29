@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+    <head>
+        <title>02_inlineCSS.html</title>
+    </head>
+    <body>
+
+        <h3>1) Inline CSS </h3>
+        <!-- style="속성:값; 속성:값; ~~"-->
+
+        <div style="width: 200px; height: 150px; background-color: red;"></div>
+        <div style="width: 100px; /*가로크기*/
+                    height: 100px; /*세로크기*/
+                    /*--는 속성 한개 주석*/
+                    --background-color: blue;"></div>
+        <hr>
+        <div style="width: 100%; height: 100px; background-color: green;"></div>
+        <hr>
+        <div style="width: 50%; height: 100px; background-color: blueviolet;"></div>
+        <hr>
+
+        <!-- 참조 https://www.w3schools.com/css/css_background.asp -->
+        <!-- background 배경 관련 스타일-->
+        <div style="width: 300px; 
+                    height: 300px; 
+                    background-image: url(../images/angel.png);
+                    background-repeat: no-repeat; /*반복 하지 않을거다*/
+                    background-position: right bottom;
+                    background-size: 20% 20%;    /*가로 세로*/"></div>
+
+        <hr>
+         <!-- 참조 https://www.w3schools.com/css/css_text.asp -->
+         <!-- 텍스트 관련 스타일-->
+         <div style="width: 300px;
+                     height: 300px;
+                     background-color: yellow;
+                     color: brown;/*글자색*/      /*글자색*/
+                     text-decoration: underline;    /*밑줄*/
+                     text-indent: 50px;             /*들여쓰기*/
+                     text-shadow: 3px 2px blue;   /*그림자 수평(3) 수직(2) 파랑*/
+                     letter-spacing: -3px;          /*글자간격*/
+                    line-height: 20px;              /*줄간격*/     
+                     word-spacing: 10px;            /*단어단격*/">
+            대책위는 의견서에서 방송통신위원회가 입법예고 기간을 40일에서 10일로 단축하는 등 절차적 하자가 있었다며
+            "기간 단축 근거로 제시한 시급성 요건도 제대로 갖추지 못하는 등 입법 절차상 명백한 하자가 드러났다"고 
+            주장했습니다.
+            </div>
+            
+            <hr>
+            <textarea cols="30" rows="10" 
+                      style="background-image: url(../images/coffee.png);
+                      background-repeat: no-repeat;
+                      background-position: right bottom;
+                      background-size: 30% 30%;"></textarea>
+
+    </body>
+</html> 

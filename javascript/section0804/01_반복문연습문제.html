@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+    <head>
+        <title>01_반복문연습문제.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>반복문 연습문제</h3>
+
+
+        <script>
+
+            //문1) 1~100사이 중에서 짝수의 합, 홀수의 합을 각각 구하시오
+            // 출력결과
+            //  짝수의 합 : 2550
+            //  홀수의 합 : 2500
+
+            let even=0;
+            let odd=0;
+            for(let a=1; a<=100; a++){
+                if(a%2==0){
+                    even=even+a;
+                }else{
+                    odd=odd+a;
+                }
+            }document.write("짝수의 합 : "+ even);
+            document.write("<br>");
+            document.write("홀수의 합 : "+odd);
+            document.write("<hr>");
+
+
+            // 다른방식 풀이
+            let even2=0;
+            let odd2=0;
+            let flag=false;          
+            for(let a=1; a<=100; a++){
+                if(flag){
+                   even2=even2+a;
+                   flag=false;
+                }else{
+                    odd2=odd2+a;
+                    flag=true;
+                  
+                }//if end
+            }
+            /*
+                a=1  1<=100
+                            if(false)
+                            else {flag=true}
+                     2<=100
+                            if(true) {flag=false}
+                     3<=100
+                            if(false)
+                            else {flag true}
+                     4<=100
+                            if(true) {flag=false}
+            */
+            document.write("짝수의 합 : "+ even2);
+            document.write("<br>");
+            document.write("홀수의 합 : "+odd2);
+            document.write("<hr>");
+
+         
+
+
+            //문2) 다음식의 결과를 구하시오
+            //      1-2+3-4+5......100 = -50
+            
+            let sum=0;          
+            for(let a=1; a<=100; a++){
+                if(a%2==0){
+                   sum=sum-a;
+                }else{
+                    sum=sum+a;
+                }
+            }document.write("1-2+3-4+5....100 = "+sum);
+            document.write("<br>");
+
+            // 다른방식 풀이
+            let hap=0; 
+            let flag1=false;         
+            for(let a=1; a<=100; a++){
+                if(a%2==0){
+                   hap=hap-a;
+                   flag1=false;
+                }else{
+                    hap=hap+a;
+                    flag1=true;
+                }
+            }document.write("1-2+3-4+5....100 = "+hap);
+            document.write("<br>");
+
+           
+
+
+
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+    <head>
+        <title>01_이벤트.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h3>이벤트</h3>
+
+        <form  name="myfom" id="myfom" method="get" action="ok.jsp" ></form>
+
+        <input type="button" value="버튼1" onclick="alert('버튼1클릭')">
+        <hr>
+
+        <input type="button"  value="아이티윌"onmouseover="show('r')" onclick="location.href='https://www.itwill.co.kr/'">
+        <input type="button" value="네이버" onmouseover="show('n')" onclick="location.href='https://www.naver.com/'">
+        <input type="button" value="다음" onmouseover="show('j')" onclick="location.href='https://www.daum.net/'">
+
+  
+
+        <table border="1">
+        <tr>
+                <td colspan="3">
+                    <div id="ryan" style="display: block;">
+                        <img src="../../images/k7.png">
+                    </div>
+                    <div id="neo" style="display: none;">
+                        <img src="../../images/k5.png">
+                    </div>
+                    <div id="jayg" style="display: none;">
+                        <img src="../../images/k3.png">
+                    </div>
+                    
+                </td>
+            </tr>
+        </table>
+
+
+        <script>
+               function show(kind){
+                // alert(kind);
+                switch(kind){
+                    case "r" :
+                        document.getElementById("ryan").style.display="block";
+                        document.getElementById("neo").style.display="none";
+                        document.getElementById("jayg").style.display="none";
+                        break;
+                    case "n" :
+                        document.getElementById("ryan").style.display="none";
+                        document.getElementById("neo").style.display="block";
+                        document.getElementById("jayg").style.display="none";
+                        break;
+                    case "j" :
+                        document.getElementById("ryan").style.display="none";
+                        document.getElementById("neo").style.display="none";
+                        document.getElementById("jayg").style.display="block";
+                        break;
+                }//switch end
+            }//show() end
+
+        </script>
+        
+    </body>
+</html>

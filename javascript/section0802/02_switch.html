@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+    <head>
+        <title>02_switch.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>switch~case문</h3>
+
+        <script>
+
+            //1. 값 : 실수형으로 경우수는 사용불가
+            //case값은 반드시 순차적이지 않아도 된다
+            switch(10){
+                case 10 : document.write("SEOUL"); break;
+                case 20 : document.write("JEJU"); break;
+                case 30 : document.write("BUSAN"); break;
+
+            }//switch end
+            document.write("<hr>")
+
+            //2. default : 목록에 값이 없으면 무조건 수행
+            switch(50){
+                case 10 : document.write("SEOUL"); break;
+                case 20 : document.write("JEJU"); break;
+                case 30 : document.write("BUSAN"); break;
+                default : document.write("기타..."); break;
+            }//switch ebd
+            document.write("<hr>")
+
+            //3. break 문이 없으면
+            switch(20){
+                case 10 : document.write("SEOUL"); break;
+                case 20 : document.write("JEJU"); 
+                case 30 : document.write("BUSAN"); break;
+                default : document.write("기타..."); break;
+            }//switch ebd
+
+
+
+            // 교제 문제 연습
+            // let site=prompt("네이버,다음,네이트,구글 중\
+            //     즐겨 사용하는 포털 검색사이트는?")      //문자열 데이터중\를 사용하면 줄바꾸기 가능
+            // let url;
+
+            // switch(site){
+            //     case "구글" : url= "www.google.com"; break;
+            //     case "다음" : url= "www.daum.net"; break;
+            //     case "네이버" : url= "www.naver.com"; break;
+            //     case "네이트" : url= "www.nate.com"; break;
+            //     default :alert("보기 중에 없는 사이트 입니다")
+            // }
+
+            // if(url) location.href="http://" + url;
+        </script>
+        
+    </body>
+</html>

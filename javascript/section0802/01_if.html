@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>05_if.html</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h3>if조건문</h3>
+    <script>
+        /*
+            ● 제어문
+                - 프로그램의 흐름을 제어
+                - 조건문 : if문, switch~case문
+                - 반복문 : for문, while문, do~while문
+                - break문
+                - continue문
+        */
+
+
+        //성적프로그램
+        let name = "무궁화";
+        let kor = 100, eng = 100, mat = 100;
+
+        //총점 구하시오
+        let total = kor + eng + mat;
+
+        //평균구하시오
+        let aver = parseInt(total / 3);
+
+        document.write("이름 : " + name + "<hr>");
+        document.write("국어 : " + kor + "<hr>");
+        document.write("영어 : " + eng + "<hr>");
+        document.write("수학 : " + mat + "<hr>");
+        document.write("총점 : " + total + "<hr>");
+        document.write("평균 : " + aver + "<hr>");
+
+
+        //문1)평균 95점이상이면 장학생을 출력하시오
+        if (aver >= 95) {
+            document.write("<span style='color:red;font-weight:bold'>장학생입니다</span>" + "<hr>");
+
+        }
+        //문2) 국어점수가 70점이상이면 합격, 아니면 불합격
+        if (kor >= 70) {
+            document.write("국어 : 합격<hr>")
+        } else {
+            document.write("국어 :불합격<hr>")
+        }
+
+        //문3)수학점수가 90점이상이면 "A"
+        //              80점이상이면 "B"
+        //              70점이상이면 "C"
+        //              60점이상이면 "D" 
+        //              나머지는 "F"
+        if (mat >= 90) {
+            document.write("수학 : A학점 <hr>")
+        } else if (mat >= 80) {
+            document.write("수학 : B학점 <hr>")
+        } else if (mat >= 70) {
+            document.write("수학 : C학점 <hr>")
+        } else if (mat >= 60) {
+            document.write("수학 : D학점 <hr>")
+        } else if (mat < 60) {
+            document.write("수학 : F학점 <hr>")
+        }
+
+
+        //문4) 과락
+        //      평균이 70이상이면 결과:합격
+        //      (단, 국영수 세과목중에서 한과목이라도 40점 미만이면 결과:재시험)
+        //      평균이 70점 미만이면 탈락
+
+        //OR조건
+        if(aver>=70 ){
+            if(kor<40 || eng<40 || mat<40){
+                document.write("결과:재시험 <hr>");
+            }else{
+            document.write("결과:합격<hr>");
+            }
+            
+        }else{
+            document.write("결과:탈락<hr>");
+        }
+
+        //2)AND조건
+        if(aver>=70 ){
+            if(kor>=40 && eng>=40 && mat>=40){
+                document.write("결과:합격 <hr>");
+            }else{
+            document.write("결과:재시험<hr>");
+            }
+            
+        }else{
+            document.write("결과:탈락<hr>");
+        }
+
+
+
+
+
+  
+    //문4) 다른방식 코드
+    // if(aver>=70 && kor>40 && eng>40 && mat>40){
+    //         document.write("결과 : 합격 입니다 <hr>");
+           
+    //     }else if(kor<40 || eng<40 || mat<40){
+    //         document.write("결과 : 재시험 <hr>");
+    //     }
+    //     else{
+    //         document.write("결과:탈락<hr>");
+    //     }
+
+
+
+
+
+
+
+
+        //  교재 문제 연습
+        // let walkAmount=prompt("당신의 하루 걷는 양은 몇보 인가요?","0");
+        //         if(walkAmount>=10000){
+        //             document.write("매우좋은습관을 지니고 계시군요","<br>")
+        //         }else{
+        //             document.write("조금더 노력하세요","<br>")
+        //         }
+        //         document.write("========The End=========<hr>")
+
+        // let userName = prompt("방문자의이름은?")
+        // if (userName) {
+        //     document.write(userName + "님 반갑습니다<hr>");
+        // }
+
+        // let num=prompt("당신이 좋아하는 숫자는","0");
+        // if(num%2==0){
+        //     document.write("당신이 좋아하는 숫자는 짝수입니다<hr>");
+        // }else{
+        //     document.write("당신이 좋아하는 숫자는 홀수 입니다<hr>");
+        // }
+
+        // let result=confirm("정말로 회원을 탈퇴하시겠습니까?");
+        // if(result){
+        //     document.write("탈퇴 처리되었습니다");
+        // }else{
+        //     document.write("탈퇴 취소되었습니다");
+        // }
+
+
+        // let id="1004";  //아이디
+        // let pw="112233";    //비밀번호
+        
+        // let user_id=prompt("아이디는?")     //아이디 입력
+        // let user_pw=prompt("비밀번호는?")   //비밀번호 입력
+
+        // if(id==user_id){
+        //     if(pw==user_pw){
+        //         document.write(user_id+"님 반갑습니다");
+        //     }else{
+        //         alert("비밀번호가 일치하지 않습니다");
+        //         location.reload();
+        //     }
+        // }else{
+        //     alert("아이디가 일치하지 않습니다");
+        //     location.reload();
+        // }
+
+
+    </script>
+
+</body>
+
+</html>

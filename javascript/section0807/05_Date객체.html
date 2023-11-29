@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+    <head>
+        <title>05_Date객체.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>Date객체</h3>
+
+        현재날짜 <div id="clock"></div>
+
+        <script>
+
+            //참조 https://www.w3schools.com/js/js_dates.asp   
+            //Date 날짜 관련 내장 객체
+
+            const d=new Date(); //시스템의 현재날짜 정보 가져오기(년월시분초)
+            document.write(d.getFullYear());
+            document.write("<br>");
+            document.write(d.getMonth());   //8월이면 7반환됨
+            document.write("<br>");
+            document.write(d.getMonth()+1); //Month는 0부터시작이어서 1을 더해준다
+            document.write("<br>");
+            document.write(d.getDate());
+            document.write("<hr>");
+
+            document.write(d.getHours());
+            document.write("<br>");
+            document.write(d.getMinutes());
+            document.write("<br>");
+            document.write(d.getSeconds());
+            document.write("<hr>");
+
+            document.write(d.getDay());//요일 (0일 1월 2화 ~~~~)
+            document.write("<br>");
+
+            const days=["일","월","화","수","목","금","토"]
+            document.write(days[d.getDay()]); //요일 배열을 이용해서  보기쉽게 한다
+            document.write("<br>");
+            
+            
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+    <head>
+        <title>01_연산자.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>연산자</h3>
+
+        <script>
+
+            //1.()연산자
+            document.write(3+4+5/2);    //9.5
+            document.write("<br>");
+            document.write((3+4+5)/2);  //6
+            document.write("<hr>");
+
+            //2. 대입연산자
+            let num=3; //초기값
+
+            num=num+2;      //3+2
+            document.write(num+"<hr>");//5
+
+            num+=2;        // num=5+2
+            document.write(num+"<hr>");//7
+
+            num=num-3;    // 7-3
+            document.write(num+"<hr>");//4
+
+            num-=3;      //num=4-3
+            document.write(num+"<hr>");//1
+
+            num*=10;    //num=1*10
+            document.write(num+"<hr>");//10
+
+            num/=2;      //num=10/2
+            document.write(num+"<hr>");//5
+
+            num%=2;      //num=5%2 
+            document.write(num+"<hr>");//1
+            ///////////////////////////////////////////////////////
+
+
+            //3. 1증감연산자
+
+            let a=3;
+
+            a=a+1;  //3+1
+            document.write(a+"<hr>");//4
+            a+=1;   //4+1
+            document.write(a+"<hr>");//5
+            a++;    //5+1
+            document.write(a+"<hr>");//6
+            ++a;    //6+1
+            document.write(a+"<hr>");//7
+
+
+            let b=3;
+            b=b-1;  //3-1
+            document.write(b+"<hr>")//2
+            b-=1;   //b=2-1
+            document.write(b+"<hr>")//1
+            b--;    //1-1
+            document.write(b+"<hr>")//0
+            --b;    //0-1
+            document.write(b+"<hr>")//-1
+
+
+            //1증강연산자는 다른 계산식과 같이 사용할 경우 주의
+            let c=10;
+            let d=20;
+
+            let i=c++;  //1. let i=c    i=10
+                        //2. c=c+1      c=10+1      
+
+            let j=--d;  //1. d=d-1      d=20-1
+                        //2. let j=d    j=19
+
+            document.write(c+d+i+j)//11+19+10+19
+            document.write("<hr>")
+
+            let h=12;
+            h=h++;  //앞에 h 가먼저 반영되고 뒤에 증강식이 계산된다.
+            document.write(h+"<hr>")//12
+            h=++h;  //뒤에 증강식이 계산되고 앞에 h에 대입된다.
+            document.write(h+"<hr>")//13
+            ///////////////////////////////////////////////////
+
+
+            //4. 삼항 연산자
+            //   형식) (조건) ? 참 : 거짓
+
+            let n=3;
+            document.write(n*-1);   //이항 3*-1
+            document.write(-n);     //단항 3*-1
+            document.write("<hr>");
+         
+            // 문1) 절대값을 구하시오 (양수값을 구하시오)
+            let su=-5;
+            let result= (su<0) ? su*-1 : su;
+                        //-5<0   -5*-1
+
+            document.write(su+" 절대값 "+result);    
+            document.write("<hr>");
+
+            //문2) 세개의 수중에서 가장 큰값(최대값)을 구하시오
+            let x=7, y=5, z=9;
+            let odo =(x<y)? y : x;
+                    //7<5       7    
+            odo= (odo<z)? z :odo;
+                 //7<9   9
+            document.write(x +", "+ y+", "+ z+", "+"중 최대값 : "+odo);    
+            document.write("<hr>");
+
+        </script>
+        
+    </body>
+</html>

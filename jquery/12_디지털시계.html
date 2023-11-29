@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+    <head>
+        <title>12_디지털시계.html</title>
+        <meta charset="utf-8">
+        <script src="jquery-3.7.1.min.js"></script>
+        <!-- moment 오픈소스 import-->
+        <script src="moment-with-locales.min.js"></script>
+        <style>
+            #time{margin: 70px; text-align: center; font-size: 30px; font-weight: bold;}
+        </style>
+    </head>
+    <body>
+
+        <h3>디지털 시계</h3>
+        
+
+        <h1 id="time"></h1>
+
+        <script>
+
+            showtime();
+          
+            function showtime(){
+                let now=moment();
+                moment.locale();
+                var fullDate=now.format("YYYY년MM월DD일 HH시mm분ss초");
+                $("#time").text(fullDate);
+            }//showtime end
+
+            // setInterval : 일정 시간(ms) 간격으로 함수를 반복적으로 실행(실행할 함수, 시간 간격(ms))
+            setInterval(showtime, 1000);
+
+        </script>
+    </body>
+</html>

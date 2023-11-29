@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+    <head>
+        <title>08_제어문연습문제.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>제어문연습문제</h3>
+
+        <script>
+            //문1) 운행거리에 따라 택시 요금을 계산하는 프로그램
+            //    2000m까지는 기본요금 900원이고
+            //    2000m초과 운행시 200m단위마다 기본요금에 100원씩 가산하여 요금을 계산한다
+            /*
+                    예1) 운행거리 1600m -> 기본요금 900원
+                    예2) 운행거리 3000m -> 1000m 초과  (기본요금 900원 + 추가요금 500원) = 1400원
+                    예3) 운행거리 2900m ->  900m 초과  (기본요금 900원 + 추가요금 500원) = 1400원
+            
+            */
+            let m=3850;             //총이동거리
+            let n=m-2000;           //기본 초과 이동거리
+            let a=Math.ceil(n/200); //추이동거리 소수점 올림
+            let c=a*100;            //추가요금
+            let b=900;              //기본요금
+            if(m<=2000){
+                document.write("결제하실 금액은 " +b+ "원입니다");
+            }else{
+                document.write("초과거리는"+n+"m 입니다","<br>");
+                document.write("결제하실 금액은 "+(b+c)+"원 입니다<hr>");
+            }
+
+     
+            
+
+            let distance=2000;  //운행거리
+            let total=0;        //전체요금
+            let ovetfee=0;      //초과요금
+
+            if(distance<=2000){     //2000m까지는
+                total=900;
+            }else{                  //2000m초과 운행시
+
+                let exceed=distance-2000;   //초과거리
+                                            //예2) 3000-2000=1000
+                                            //예3) 2900-2000= 900
+                                            //예4) 2250-2000= 250
+                document.write("초과거리 : " + exceed+ "<br>");
+                
+                //초과요금 900/200 -> 4.5 -> 5로 올려서 계산
+                //        250/200 -> 1.2 -> 2로 올려서 계산
+                //Math.ceil(4.5) -> 5 소수값 올림 함수
+                //Math.ceil(1.2) -> 소수값 올림 함수
+                ovetfee=Math.ceil(exceed/200)*100;
+                total=900+ovetfee
+            }
+            document.write("총운행거리 : " + distance +"<br>");
+            document.write("기본요금 : <br>");
+            document.write("추가요금 : " + ovetfee +"<br>");
+            document.write("전체요금 : " + total+"<br>");
+
+            document.write("<hr>");
+
+        let leng ="2201"; // 간거리
+        let cha =""; // 나온요금
+        if(leng<=2000){
+            cha = 900;
+        } else if(leng>2000){
+            cha = 900 + Math.ceil((leng - 2000)/200)*100; 
+        }
+        document.write("택시비 : "+ cha + "원");
+
+        </script>
+        
+    </body>
+</html>

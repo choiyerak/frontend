@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+    <head>
+        <title>15_form.html</title>
+    </head>
+    <body>
+
+        <!-- 참조 https://www.w3schools.com/html/html_forms_attributes.asp -->
+
+        <h3>1. 폼 관련 속성들</h3>
+        <!--
+            id=""       폼 아이디 (주로 Frontend단에서 접근시 사용)
+            name=""     폼 이름   (주로 Backend단에서 접근시 사용)
+            action=""   사용자가 입력 요청한 정보를 서버측에서 받는 페이지명 또는 명령어
+            mathod=""   전송방식 get 또는 post(form관련은 두가지 방식 그밖에도 많음)
+            enctype=""  파일 첨부해서 전송
+        -->
+        <!-- merhod=get 사용자가 입력한 정보가 URL에 그대로 노출(엽서)-->
+        <form name="loginfrm" id="loginfrm" method="get" action="ok.jsp">
+            아이디 : <input type="text" name="userid"><hr>
+            비밀번호 : <input type="password" name="userpw"> <hr>
+            <input type="submit" value="전송(get)">
+        </form>
+        <hr>
+
+        <!-- method=post 사용자가 입력한 정보가 팩키지화해서 전송(편지봉투)-->
+        <form id="ioginform" id="ioginform" method="post" action="ok.jsp">
+            아이디 : <input type="text" name="userid" id="userid"><hr>
+            비밀번호 : <input type="password" name="userpw" id="userpw"><hr>
+            <input type="submit" value="전송(post)">
+        </form>
+        <hr>
+
+        <!-- 파일 첨부해서 전송 -->
+        <!-- muitipart/formdata 첨부파일 같이 전송 -->
+        <form enctype="multipart/form-data">
+           첨부파일 : <input type="file">
+        </form>
+        <hr>
+
+        <h3>2. type=image</h3>
+        <form action="ok2.jsp">
+            <img src="../images/angel.png" titlethtm="천사">
+            <hr>
+
+            <!-- <img src=''> + type = submit 기능(그림을 클릭할수 있게 만들어 줌)-->
+            <input type="image" src="../images/angel.png">
+            <hr>
+
+            검색 : <input type="text" name="search">
+            <input type="image" src="../images/search.png">
+        </form>
+        <hr>
+
+        <h3>3. 다양한 Input Types</h3>
+        <!-- 참조 https://www.w3schools.com/html/html_form_input_types.asp -->
+        
+        <!-- HTML 페이지에서 노출되지는 않지만 form에 포함된 컨트롤 요소-->
+        <form method="get" action="ok3.jsp">
+            <input type="hidden" name="page" id="page" value="3">
+            <input type="hidden" name="col" id="col" value="title">
+            <input type="submit">
+        </form>
+        <hr>
+        <input type="number" name="quantity" id="quantity" min="1" max="5">
+        <input type="range" name="vol" id="vol" min="0" max="50"><hr>
+
+        <input type="color"><hr>
+        <input type="date"><hr>
+        <input type="search"><hr>
+        <input type="time"><hr>
+        <input type="week"><hr>
+        
+        <h3>4. label </h3><!-- label 이름을 클릭해도 커서가 박스로 이동  -->
+        <label for="user"> 이름 :</label>
+        <input type="text" id="user">
+    </body>
+</html>
